@@ -1,0 +1,15 @@
+package Quearrays;
+class QueusingArray{
+	int Front_Q, Rear_Q;
+	int CapacityOfQ;
+	
+	Que_using_Ar(int size){
+		CapacityOfQ = size;
+	}
+}
+
+public class Queexample {
+	public static void main(String [] args) {
+		
+	}
+}

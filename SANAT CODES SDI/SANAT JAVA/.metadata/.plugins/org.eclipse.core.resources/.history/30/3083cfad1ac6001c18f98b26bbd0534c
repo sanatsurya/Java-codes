@@ -1,0 +1,11 @@
+package TeluskoJava;
+
+public class Breakstatement {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		for()
+
+	}
+
+}

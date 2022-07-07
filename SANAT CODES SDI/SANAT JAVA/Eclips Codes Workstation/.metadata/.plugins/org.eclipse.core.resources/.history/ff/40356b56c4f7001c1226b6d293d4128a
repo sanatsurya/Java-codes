@@ -1,0 +1,13 @@
+package com.ExamSolution.SpringProjects.QuesyionAnswer;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class QuesyionAnswerApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(QuesyionAnswerApplication.class, args);
+	}
+
+}

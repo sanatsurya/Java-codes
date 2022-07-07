@@ -1,0 +1,16 @@
+package TeluskoJava;
+
+class Father{
+	int x;
+	int y;
+	
+	public  Father() {
+		x=8;
+		y=9;
+	}
+}
+public class Constructor {
+	public static void main(String[] args) {
+		
+	}
+}

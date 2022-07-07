@@ -1,0 +1,23 @@
+package Java_Project_Demo;
+class Father{
+	public Father() {
+		System.out.println("This is for the demo java");
+	}
+	public void InheritOne() {
+		System.out.println("This is to be Inherit");
+	}
+}
+class Child extends Father{
+	public Child() {
+		System.out.println("This will inherites propery of parents class");
+	}
+	public void Inherit() {
+		System.out.println("This property");
+	}
+}
+public class InterfaceDemo {
+	public static void main(String[] args) {
+		Child s = new Child();
+		s.Inherit();
+	}
+}

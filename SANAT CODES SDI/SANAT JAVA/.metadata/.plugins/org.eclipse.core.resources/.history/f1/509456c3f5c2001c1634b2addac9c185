@@ -1,0 +1,10 @@
+package stack_dsa;
+
+public class StackSolution {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

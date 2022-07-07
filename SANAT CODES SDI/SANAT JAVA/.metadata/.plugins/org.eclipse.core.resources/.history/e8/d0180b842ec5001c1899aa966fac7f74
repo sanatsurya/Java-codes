@@ -1,0 +1,9 @@
+package Oops_classes;
+interface vehicle{
+	int vehicleno;
+	
+	
+}
+public class Interfacefirst {
+
+}

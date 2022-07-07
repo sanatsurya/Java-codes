@@ -1,0 +1,12 @@
+package array.list_1d_2d_md;
+import java.util.Arrays;
+
+public class ArraysSort {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a1[]= new int[] {5,7,9,8,4,3,2,1};
+		Arrays.sort(a1);
+	}
+
+}

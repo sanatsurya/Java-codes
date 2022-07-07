@@ -1,0 +1,42 @@
+package Oops_classes;
+class add{
+	int a;
+	int b;
+	public void AddNum() {
+		System.out.println(this.a + this.b);
+	}
+}
+class sub{
+	int a;
+	int b;
+	public void SubNum() {
+
+		if(a<b)
+			System.out.println(this.b - this.a);
+		else
+			System.out.println(this.a - this.b);
+	}
+}
+class Mult{
+	int a ;
+	int b ;
+	public void MultNum() {
+		
+	}
+}
+class Divis{
+	int a;
+	int b;
+	public void DivNum() {
+		if (a<b) {
+			System.out.println(this.b / this.a);
+		}
+		else
+			System.out.println(this.a/ this.b);
+	}
+}
+public class AdditionSubstraction {
+	public static void main(String[] args) {
+		
+	}
+}

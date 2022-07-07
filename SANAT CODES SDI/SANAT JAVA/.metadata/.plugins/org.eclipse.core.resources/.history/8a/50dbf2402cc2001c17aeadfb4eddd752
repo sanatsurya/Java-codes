@@ -1,0 +1,12 @@
+package array.list_1d_2d_md;
+
+public class Array_Solution {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int s1[] = new int[6];// Here new key word is used to create object in class or allocate memory
+		
+
+	}
+
+}

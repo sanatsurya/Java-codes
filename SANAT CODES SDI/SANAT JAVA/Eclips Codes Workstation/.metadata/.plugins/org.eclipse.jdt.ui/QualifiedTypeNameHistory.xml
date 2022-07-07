@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="javax.annotation.Resource"/>
+    <fullyQualifiedTypeName name="org.springframework.core.io.ClassPathResource"/>
+    <fullyQualifiedTypeName name="org.apache.naming.factory.BeanFactory"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.xml.XmlBeanFactory"/>
+</qualifiedTypeNameHistroy>

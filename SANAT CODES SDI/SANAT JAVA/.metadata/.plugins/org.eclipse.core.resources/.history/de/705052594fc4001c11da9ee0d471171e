@@ -1,0 +1,13 @@
+package Oops_classes;
+public class employee{
+	private int emp_id;
+	p
+}
+public class Abstraction {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

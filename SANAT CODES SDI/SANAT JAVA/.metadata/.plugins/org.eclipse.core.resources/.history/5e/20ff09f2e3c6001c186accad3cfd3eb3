@@ -1,0 +1,20 @@
+package Oops_classes;
+
+class Player{
+	String PlayerName;
+	int PlayerId;
+	
+	public void PrintInfo(String PlayeName) {
+		System.out.println(this.PlayerName);
+	}
+	public void PrintInfo(int PlayerId) {
+		System.out.println(this.PlayerId);
+	}
+	public void PrintInfo(String PlayerName, int PlayerId) {
+		System.out.println(this.PlayerName + this.PlayerId);
+	}
+}
+public class PolymerposimDemo {
+	Player p1 = new Player("Raghaba");
+
+}

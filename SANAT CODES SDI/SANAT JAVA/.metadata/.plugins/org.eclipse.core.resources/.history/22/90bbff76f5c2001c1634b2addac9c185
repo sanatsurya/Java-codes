@@ -1,0 +1,10 @@
+package array.list_1d_2d_md;
+import java.math.*;
+
+public class Mathtest {
+	public static void main(String[] args) {
+		int a =21;
+		abs(double a);
+	}
+
+}
