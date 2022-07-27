@@ -26,36 +26,44 @@ public class RegistrationServlet extends HttpServlet {
 		String uphone= request.getParameter("contact");
 		String upassword= request.getParameter("pass");
 		RequestDispatcher dispatcher= null;
-		Connection con = null;
+		
 //		My database code
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/TDIC?useSSL=false","root","User@1");
-			PreparedStatement pst = con.prepareStatement("insert into Registration(uname,uemail,umobile,upwd) values(?,?,?,?)");
-			pst.setString(1, uname);
-			pst.setString(2, uemail);
-			pst.setString(3, uphone);
-			pst.setString(4, upassword);
-			
-			int rowCount=pst.executeUpdate();
+		if(uname.equals("")&& upassword.equals("")) {
+			request.setAttribute("status", "failed");
 			dispatcher = request.getRequestDispatcher("registration.jsp");
-			if(rowCount>0) {
-				request.setAttribute("status", "sucess");
-			}else {
-				request.setAttribute("status", "failed");
-			}
-			dispatcher.forward(request, response);
-		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
-		}finally {
-			 try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+			request.setAttribute("status", "failed");
+		}else {
+			Connection con = null;
+			try {
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/TDIC?useSSL=false","root","User@1");
+				PreparedStatement pst = con.prepareStatement("insert into Registration(uname,uemail,umobile,upwd) values(?,?,?,?)");
+				pst.setString(1, uname);
+				pst.setString(2, uemail);
+				pst.setString(3, uphone);
+				pst.setString(4, upassword);
+				
+				int rowCount=pst.executeUpdate();
+				dispatcher = request.getRequestDispatcher("registration.jsp");
+				if(rowCount>0) {
+					request.setAttribute("status", "sucess");
+				}else {
+					request.setAttribute("status", "failed");
+				}
+				dispatcher.forward(request, response);
+			} catch (ClassNotFoundException | SQLException e) {
 				e.printStackTrace();
+			}finally {
+				 try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
-		}
 
+		}
+		
 	}
 
 }

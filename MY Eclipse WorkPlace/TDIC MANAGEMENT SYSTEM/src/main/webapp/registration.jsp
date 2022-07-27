@@ -84,6 +84,8 @@
 		var status = document.getElementById("status").value;
 		if(status=="sucess"){
 			swal("Congratulation","You are now registered");
+		}else if(status=="failed"){
+			swal("sorry ","registration is unsucessfull please enter valid details");
 		}
 	</script>
 
