@@ -33,6 +33,8 @@
    </head>
    <!-- body -->
    <body class="main-layout inner_posituong contact_page">
+   <input type="hidden" id="status" value="<%= request.getAttribute("status")%>">
+   	<input type="hidden" />
       <!-- loader  -->
       <div class="loader_bg">
          <div class="loader"><img src="images/loading.gif" alt="#" /></div>
@@ -106,7 +108,7 @@
             </div>
             <div class="row">
                <div class="col-md-10 offset-md-1">
-                  <form id="request" class="main_form">
+                  <form id="request" class="main_form" method="post" action="contact">
                      <div class="row">
                         <div class="col-md-12 ">
                            <input class="contactus" placeholder="Name" type="type" name="Name"> 
@@ -115,13 +117,13 @@
                            <input class="contactus" placeholder="Email" type="type" name="Email"> 
                         </div>
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">                          
+                           <input class="contactus" placeholder="Phone Number" type="type" name="Phone">                          
                         </div>
                         <div class="col-md-12">
-                           <textarea class="textarea" placeholder="Message" type="type" Message="Name">Message </textarea>
+                           <textarea class="textarea" placeholder="Message" type="type" name="message" Message="Name">Message </textarea>
                         </div>
                         <div class="col-md-12">
-                           <button class="send_btn">Send</button>
+                           <button class="send_btn" type="submit" value="contact">Send</button>
                         </div>
                      </div>
                   </form>
@@ -185,7 +187,16 @@
       <!-- sidebar -->
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
-     
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
+	<script type="text/javascript">
+		var status = document.getElementById("status").value;
+		if(status=="sucess"){
+			swal("Message sent sucess full");
+		}else if(status=="failed"){
+			swal("Message not sent");
+		}
+	</script>
    </body>
 </html>
 
