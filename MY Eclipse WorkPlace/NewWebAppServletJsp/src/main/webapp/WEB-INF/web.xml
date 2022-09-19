@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>NewWebAppServletJsp</display-name>
+  <welcome-file-list>
+  	<welcome-file>attribute.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  	<servlet-name>myFirst</servlet-name>
+  	<servlet-class>com.ServletsF.MyFirstServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Second</servlet-name>
+  	<servlet-class>com.ServletsF.SecondServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Third</servlet-name>
+  	<servlet-class>com.ServletsF.MyServlet</servlet-class>
+  </servlet>
+  <!-- Servlet register mapping -->
+  <servlet>
+  	<servlet-name>RegisterServ</servlet-name>
+  	<servlet-class>com.RegisterLogin.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SucessRegister</servlet-name>
+  	<servlet-class>com.RegisterLogin.SucessesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SucessRegister</servlet-name>
+  	<url-pattern>/SucessesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RegisterServ</servlet-name>
+  	<url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>myFirst</servlet-name>
+  <url-pattern>/web</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  <servlet-name>Second</servlet-name>
+  <url-pattern>/second</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>Third</servlet-name>
+  	<url-pattern>/third</url-pattern>
+  </servlet-mapping>
+  <session-config>
+  	<session-timeout> 30</session-timeout>
+  </session-config>
+</web-app>

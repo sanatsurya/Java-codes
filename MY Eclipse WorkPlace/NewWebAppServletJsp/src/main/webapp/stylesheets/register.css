@@ -1,0 +1,9 @@
+@charset "UTF-8";
+.container{
+	width: 50px;
+	margin: auto;
+}
+.registerform {
+	padding: 20px;
+	margin-top: 10%;
+}
