@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 		RequestDispatcher dispatcher = null;
 		Connection con=null;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/TDIC?useSSL=false","root","User@1");
 			PreparedStatement pst = con.prepareStatement("select * from registration  where uemail =? and upwd=?");
 			pst.setString(1, loginId);

@@ -22,3 +22,18 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+/NetBean Web App Worksplace/JSPServlet/target/
+/NetBean Web App Worksplace/Codegeneratpr/nbproject/private/
+/NetBean Web App Worksplace/Codegeneratpr/build/
+/NetBean Web App Worksplace/Codegeneratpr/dist/
+/NetBean Web App Worksplace/codegenerator/nbproject/private/
+/NetBean Web App Worksplace/codegenerator/build/
+/NetBean Web App Worksplace/ErrorHandeling/nbproject/private/
+/NetBean Web App Worksplace/ErrorHandeling/build/
+/NetBean Web App Worksplace/CustomTags/nbproject/private/
+/NetBean Web App Worksplace/CustomTags/build/
+/NetBean Web App Worksplace/CustomTags/dist/
+/NetBean Web App Worksplace/StudentDrems/nbproject/private/
+/NetBean Web App Worksplace/StudyProject/nbproject/private/
+/NetBean Web App Worksplace/StudyProject/build/
+/NetBean Web App Worksplace/StudyProject/dist/

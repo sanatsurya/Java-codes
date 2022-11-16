@@ -10,7 +10,7 @@ public class GreatestNumber {
         System.out.println("Enter num3: ");
         int num3 = sc.nextInt();
         if (num1<num2&& num2<num3){
-            System.out.println("num3 is greatest number ");
+            System.out.println("num3 is greatest number");
         }
     }
 }
