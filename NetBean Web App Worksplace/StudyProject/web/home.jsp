@@ -1,6 +1,5 @@
-<%@page import="com.study.helper.ConnectionProvider"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.sql.*" %>
+<%@page errorPage="errorpage.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>

@@ -3,20 +3,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 package com.Servlet.Registerlogin;
+
 import com.study.dao.UserTableDao;
 import com.study.helper.ConnectionProvider;
 import com.study.entity.UserTable;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author ASUS
  */
+@MultipartConfig
 public class RegisterServlet extends HttpServlet {
 
     /**
@@ -33,33 +40,37 @@ public class RegisterServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet RegisterServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
             //Fetch The register form data
             String check = request.getParameter("ucheck");
-            String password= request.getParameter("upass");
-            String repassword= request.getParameter("rupass");
-            if(password.equals(repassword)){
-                out.print("password and retype password not matched");
-                if(check==null){
+            String password = request.getParameter("upass");
+            //String repassword = request.getParameter("rupass");
+            String about = request.getParameter("uabout");
+            if (check == null) {
                 out.print("please accept term and condition");
-            }else{
-                String name =request.getParameter("uname");
-                String email =request.getParameter("uemail");
-                String gender =request.getParameter("gender");
+            } else {
+                String name = request.getParameter("uname");
+                String email = request.getParameter("uemail");
+                String gender = request.getParameter("gender");
+                Part part =request.getPart("uimage");
+                String image = part.getSubmittedFileName();
                 //Create a user objects and set it
-                UserTable user = new UserTable(0, name, email, email, name, gender, reg_date, email)
+                UserTable user = new UserTable(name, email, password, gender, about, image);
                 //Create a user dao objects
-                    UserTableDao udao = new UserTableDao(ConnectionProvider.getConnection());
+                UserTableDao udao = new UserTableDao(ConnectionProvider.getConnection());
+                if (udao.saveUser(user)) {
+                    out.print("done");
+                    InputStream is = part.getInputStream();
+                    byte[] data = new byte[is.available()];
+                    String path = request.getRealPath("/img/ProfilePicture")+File.separator+image;
+                    try (FileOutputStream fos = new FileOutputStream(path)) {
+                        fos.write(data);
+                    }catch(Exception e){
+                        System.out.println(e.getMessage());
+                    }
+                } else {
+                    out.print("error");
+                }
             }
-            }
-            
-            out.println("</body>");
-            out.println("</html>");
         }
     }
 
