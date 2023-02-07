@@ -44,10 +44,10 @@ public class App
         student.setAddress("old cross-2");
         student.setCourse(csCourse);
         //File input strength
-        FileInputStream fio = new FileInputStream("src/main/java/logo.png");
-        byte[] data= new byte[fio.available()];
-        fio.read(data);
-        student.setImage(data);
+//        FileInputStream fio = new FileInputStream("src/main/java/logo.png");
+//        byte[] data= new byte[fio.available()];
+//        fio.read(data);
+//        student.setImage(data);
         Session session = factory.openSession();
         Transaction txTransaction = session.beginTransaction();
         session.save(lectures);

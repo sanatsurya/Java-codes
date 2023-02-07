@@ -1,7 +1,10 @@
 package com.QuestionAns;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -12,17 +15,12 @@ public class ExamQuestions {
 	@Id
 	private int id;
 	private String question;
-	@OneToOne
-	private Answer answer;
+	@OneToMany(mappedBy = "examQuestions")
+	private List<Answer> answers;
+	
 	public ExamQuestions() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-	public ExamQuestions(int id, String question, Answer answer) {
-		super();
-		this.id = id;
-		this.question = question;
-		this.answer = answer;
 	}
 	
 	public int getId() {
@@ -37,16 +35,27 @@ public class ExamQuestions {
 	public void setQuestion(String question) {
 		this.question = question;
 	}
-	public Answer getAnswer() {
-		return answer;
+
+	public List<Answer> getAnswers() {
+		return answers;
 	}
-	public void setAnswer(Answer answer) {
-		this.answer = answer;
+
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
 	}
+
+	public ExamQuestions(int id, String question, List<Answer> answers) {
+		super();
+		this.id = id;
+		this.question = question;
+		this.answers = answers;
+	}
+
 	@Override
 	public String toString() {
-		return "ExamQuestions [id=" + id + ", question=" + question + ", answer=" + answer + "]";
+		return "ExamQuestions [id=" + id + ", question=" + question + "]";
 	}
+	
 	
 
 }
